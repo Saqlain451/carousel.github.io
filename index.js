@@ -27,9 +27,9 @@ const content = document.querySelector(".content");
 const title = document.querySelector(".title");
 const pic = document.querySelector("img");
 const allDots = document.querySelectorAll(".fa-circle-dot");
-const firstDot = document.getElementById("first-dot");
-const secondDot = document.getElementById("second-dot");
-const thirdDot = document.getElementById("third-dot");
+const firstDot = document.querySelector(".one");
+const secondDot = document.querySelector(".two");
+const thirdDot = document.querySelector(".three");
 
 let index = 0;
 
@@ -64,33 +64,56 @@ setInterval(() => {
     index = 0;
   }
 
-  if (index == 1) {
-    addClass2();
-  } else if (index == 2) {
-    addClass3();
-  } else {
-    addClass1();
-  }
+  // if (index == 1) {
+  //   addClass2();
+  // } else if (index == 2) {
+  //   addClass3();
+  // } else {
+  //   addClass1();
+  // }
+
+  index==1 ? addClass2() : index==2? addClass3() : addClass1();
 
   loadAllContent(dataFood);
 }, 5000);
 
-firstDot.addEventListener("click", () => {
-  index = 0;
-  loadAllContent(dataFood);
-  addClass1();
-});
+// firstDot.addEventListener("click", () => {
+//   index = 0;
+//   loadAllContent(dataFood);
+//   addClass1();
+// });
 
-secondDot.addEventListener("click", () => {
-  index = 1;
-  loadAllContent(dataFood);
-  addClass2();
-});
+// secondDot.addEventListener("click", () => {
+//   index = 1;
+//   loadAllContent(dataFood);
+//   addClass2();
+// });
 
-thirdDot.addEventListener("click", () => {
-  index = 2;
-  loadAllContent(dataFood);
-  addClass3();
-});
+// thirdDot.addEventListener("click", () => {
+//   index = 2;
+//   loadAllContent(dataFood);
+//   addClass3();
+// });
+
+allDots.forEach((element)=>{
+  const change = (e)=>{
+    const className = e.target.classList;
+    console.log(className);
+    if(className.contains("one")){
+      index=0;
+      loadAllContent(dataFood);
+      addClass1();
+    }else if(className.contains("two")){
+      index=1;
+      loadAllContent(dataFood);
+      addClass2();
+    }else{
+      index=2;
+      loadAllContent(dataFood);
+      addClass3();
+    }
+  }
+  element.addEventListener('click',change);
+})
 
 loadAllContent(dataFood);

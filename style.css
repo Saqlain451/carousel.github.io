@@ -1,0 +1,113 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap");
+
+html {
+  font-size: 62.5%;
+  font-family: "Nunito", sans-serif;
+}
+:root {
+    --bg-light: #eee;
+    --bg-white: #fff;
+    --color-blue: #192a56;
+    --color-green: #27ae60;
+    --color-dark: #666666;
+  }
+
+#hero{
+    background-color: var(--bg-white);
+}
+
+.container{
+    padding: 8rem 12rem;
+}
+
+.carousel{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    text-transform: capitalize;
+    align-items: center;
+}
+
+.carousel img{
+    width: 95%;
+    height: auto;
+}
+
+.intro{
+    font-size: 2.5rem;
+    color: var(--color-green);
+    text-transform: capitalize;
+}
+
+.title{
+    font-size: 6rem;
+    color: var(--color-blue);
+}
+
+.content{
+    font-size: 2.4rem;
+    color: var(--color-dark);
+}
+
+.btn-buy{
+    padding: 1rem 3.5rem;
+    background-color: var(--color-blue);
+    border: none;
+    color: var(--bg-white);
+    text-transform: capitalize;
+    font-size: 1.6rem;
+    border-radius: 5px;
+    margin-top: 2rem;
+    cursor: pointer;
+    transition: 0.5s all linear;
+}
+
+
+.btn-buy:hover{
+    background-color: var(--color-green);
+    letter-spacing: 0.2rem;
+}
+
+.carousel-icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1.5rem;
+    color : var(--color-blue);
+}
+
+.active{
+    color: var(--color-green);
+}
+
+@media(width<=421px){
+    .container{
+        padding: 0rem 1rem;
+    }
+    .carousel{
+        display: grid;
+        grid-template-columns: auto;
+        text-transform: capitalize;
+        text-align: center;
+    }
+
+    .carousel img{
+        margin-top: 2rem;
+    }
+
+    .carousel-icons{
+        margin-top: 2rem;
+    }
+
+}
+
+
+
+
